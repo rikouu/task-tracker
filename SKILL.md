@@ -44,4 +44,7 @@ Maintain a live task state file so context survives session resets/compaction.
 - For background processes: always record session ID + what server + what command
 - For multi-step tasks: update after each step
 - Keep it concise — this isn't a log, it's a state snapshot
+- **Size limit: keep under 50 lines / 2KB** — this file is read every session start
+- Completed tasks: collapse to one-line summary, reference daily notes for details
 - Prune completed tasks older than 3 days
+- If Active is empty, write （无） to make it obvious
